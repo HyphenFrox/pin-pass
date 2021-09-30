@@ -9,7 +9,6 @@ import SettingsBox from "./SettingsBox";
 import SettingLabel from "./SettingLabel";
 import SettingCheckBox from "./SettingCheckbox";
 import PasswordLengthSlider from "./PasswordLengthSlider";
-import PasswordTextArea from "./PasswordTextArea";
 //
 
 const PasswordGeneratorBox = (props) => {
@@ -79,10 +78,17 @@ const PasswordGeneratorBox = (props) => {
         }}
       >
         {/* password text */}
-        <PasswordTextArea
+        <Box
           ref={passwordTextRef}
-          password={password}
-        ></PasswordTextArea>
+          sx={{
+            color: "white",
+            fontSize: "1.2rem",
+            flexGrow: 1,
+            overflowWrap: "anywhere",
+          }}
+        >
+          {password}
+        </Box>
         {/* copy button */}
         <IconButton onClick={handleCopyPassword}>
           <ContentCopyIcon></ContentCopyIcon>
